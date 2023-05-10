@@ -16,13 +16,16 @@ import {
 
 const pathSrc = path.resolve(__dirname, 'src')
 
+// var isDev = import.meta.env.DEV
+
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
     cors: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        // target: 'http://localhost:8000',
+        target: 'http://69.176.94.109:8000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },

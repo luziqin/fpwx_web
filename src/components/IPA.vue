@@ -6,7 +6,7 @@ import { useIPAStore } from '~/stores/ipa_store';
 onMounted(() => {
    axios({
         method: 'get',
-        url: 'http://69.176.94.109:8000/',
+        url: 'api/',
     }).then(res => {
         console.log(res.data);
     });

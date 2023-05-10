@@ -1,6 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import axios from 'axios';
+import { ref, onMounted } from 'vue';
 import { useIPAStore } from '~/stores/ipa_store';
+
+onMounted(() => {
+   axios({
+        method: 'get',
+        url: 'http://69.176.94.109:8000/',
+    }).then(res => {
+        console.log(res.data);
+    });
+});
+
 const ipaStrore = useIPAStore()
 
 const _error = ref<Error>();

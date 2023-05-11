@@ -4,12 +4,16 @@ import { ref, onMounted } from 'vue';
 import { useIPAStore } from '~/stores/ipa_store';
 
 onMounted(() => {
-   axios({
+    console.log("on mounted");
+
+    axios({
         method: 'get',
-        url: '/api',
+        url: 'https://fpwx.uutx.cn/api',
     }).then(res => {
         console.log(res.data);
-    });
+    }).catch(err => {
+        console.log(err);
+    })
 });
 
 const ipaStrore = useIPAStore()

@@ -20,14 +20,14 @@ const pathSrc = path.resolve(__dirname, 'src')
 export default defineConfig({
   server: {
     cors: true,
-    proxy: {
-      '/api': {
-        // target: 'http://localhost:8000',
-        target: 'https://fpwx.uutx.cn/',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-      },
-    }
+    // proxy: {
+    //   // '/api': {
+    //   //   target: 'http://localhost:8000',
+    //   //   // target: 'https://fpwx.uutx.cn/',
+    //   //   changeOrigin: true,
+    //   //   rewrite: (path) => path.replace(/^\//, ''),
+    //   // },
+    // }
   },
   resolve: {
     alias: {

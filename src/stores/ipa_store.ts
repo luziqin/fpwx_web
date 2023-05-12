@@ -19,8 +19,9 @@ export const useIPAStore = defineStore('ipa', () => {
       loading: true,
       error: null,
     };
-
-    var url = 'http://69.176.94.109/api/signature/fpwx/' + (index + 1);
+    
+    var host = "https://fpwx.uutx.cn";
+    var url = host + '/api/signature/fpwx/' + (index + 1);
 
     try {
       var res = await axios({

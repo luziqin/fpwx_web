@@ -32,7 +32,8 @@ function downloadIPA(index: number) {
         }
 
         if (url != null) {
-            window.open(<string>url, '_blank');
+            // window.open(<string>url, '_blank');
+            window.location.href = <string>url;
         }
 
     });

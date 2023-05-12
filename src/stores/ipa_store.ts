@@ -20,10 +20,12 @@ export const useIPAStore = defineStore('ipa', () => {
       error: null,
     };
 
+    var url = 'http://69.176.94.109/api/signature/fpwx/' + (index + 1);
+
     try {
       var res = await axios({
         method: 'get',
-        url: 'api/signature/fpwx/generateipa/' + (index + 1),
+        url: url,
       });
       var url = res.data["services_url"] as string;
       requestState.loading = false;

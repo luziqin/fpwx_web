@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import axios from 'axios';
-import { ref, onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useIPAStore } from '~/stores/ipa_store';
 
 onMounted(() => {
     console.log("on mounted");
-
     axios({
         method: 'get',
-        url: 'https://fpwx.uutx.cn/api',
+        url: 'https://fpwx.uutx.cn/',
     }).then(res => {
         console.log(res.data);
     }).catch(err => {
@@ -31,6 +30,11 @@ function downloadIPA(index: number) {
             _error.value = error;
             dialogVisible.value = true;
         }
+
+        if (url != null) {
+            window.open(<string>url, '_blank');
+        }
+
     });
 }
 
